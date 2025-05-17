@@ -16,7 +16,7 @@ This repository consolidates multiple subprojects under the Adaptive Learning Ma
 
 ## BlockAll Chrome Extension
 
-![BlockAll Screenshot](./images/blockall.png)
+![BlockAll Screenshot](Blockall_Interface.png)
 
 **BlockAll Chrome Extension** is a tool that helps you stay focused by blocking distracting websites and implements the Pomodoro technique. Built by the TechMatrix Team.
 
