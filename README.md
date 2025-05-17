@@ -58,7 +58,9 @@ MIT License (see LICENSE file for details).
 
 ## Course Recommender
 
-![Course Recommender Screenshot](./images/course_recommender.png)
+- ![discussion_Platform](discussion_Platform.png)
+- ![list_of_course1_Integrated_razorpay](list_of_course1_Integrated_razorpay.png)
+- ![list_of_course2](list_of_course2.png)
 
 The **Course Recommender** project analyzes the past learning experiences of students and suggests future courses.
 
@@ -74,11 +76,7 @@ The **Course Recommender** project analyzes the past learning experiences of stu
 
 ---
 
-## Web-scrapping Module
 
-![Web Scrapping Module Screenshot](./images/web_scrapping_module.png)
-
-The **Web-scrapping Module** extracts information from the web using automated scripts.
 
 ### Getting Started
 - Clone the repository and create a new virtual environment.
@@ -100,7 +98,7 @@ Feel free to raise an issue if something goes wrong.
 
 ## Learning Legion Chrome Extension
 
-![Learning Legion Screenshot](./images/learning_legion.png)
+- ![Learning legion chrome Extension demo](Learning_legion_chrome_Extension_demo.png)
 
 **Learning Legion** is a Chrome extension that uses Generative AI to condense lengthy online articles into concise summaries.
 
@@ -132,11 +130,11 @@ Feel free to raise an issue if something goes wrong.
 
 ## Additional Images
 
-- ![AI Page Assistant Interface](./images/AI%20Page%20Assistant_Interface.png)
-- ![Activity Diagram Learning legion updated](./images/Activity_Diagram_Learning_legion_updated.png)
-- ![Blockall Interface](./images/Blockall_Interface.png)
-- ![Blockall Setting Interface](./images/Blockall_Setting_interface.png)
-- ![Focus Master Settings](./images/Focus_Master_Settings.png)
-- ![Learning legion chrome Extension demo](./images/Learning_legion_chrome_Extension_demo.png)
+- ![AI Page Assistant Interface](AI%20Page%20Assistant_Interface.png)
+- ![Activity Diagram Learning legion updated](Activity_Diagram_Learning_legion_updated.png)
+
+- ![Blockall Setting Interface](Blockall_Setting_interface.png)
+- ![Focus Master Settings](Focus_Master_Settings.png)
+
 
 Thank you for exploring the Adaptive Learning Master Project. For more details, refer to the sections above. 
