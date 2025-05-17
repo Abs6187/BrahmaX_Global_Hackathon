@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlockAll Settings</title>
+  <link rel="stylesheet" href="settings.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>BlockAll Settings</h1>
+      <p class="subtitle">by TechMatrix Team</p>
+    </header>
+
+    <div class="settings-panel">
+      <h2>Pomodoro Timer Settings</h2>
+      <div class="setting-row">
+        <label for="work-duration">Work Duration (minutes)</label>
+        <div class="input-group">
+          <button id="decrease-work" class="btn small"><i class="fas fa-minus"></i></button>
+          <input type="number" id="work-duration" min="1" max="120" value="25">
+          <button id="increase-work" class="btn small"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+      <div class="setting-row">
+        <label for="break-duration">Break Duration (minutes)</label>
+        <div class="input-group">
+          <button id="decrease-break" class="btn small"><i class="fas fa-minus"></i></button>
+          <input type="number" id="break-duration" min="1" max="60" value="5">
+          <button id="increase-break" class="btn small"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="settings-panel">
+      <h2>Educational Content Filter</h2>
+      <div class="setting-row">
+        <label for="enable-edu-check">Enable Educational Content Filter</label>
+        <div class="toggle-switch">
+          <input type="checkbox" id="enable-edu-check" checked>
+          <label for="enable-edu-check" class="toggle-label"></label>
+        </div>
+      </div>
+      <p class="setting-description">
+        When enabled, the extension will analyze website content to determine if it's educational.
+        Non-educational content will be blocked, while educational content will be displayed in a small frame.
+      </p>
+      
+      <div class="setting-row api-key-row">
+        <label for="groq-api-key">Groq API Key</label>
+        <div class="api-key-input">
+          <input type="password" id="groq-api-key" placeholder="Enter your Groq API key">
+          <button id="show-api-key" class="btn small eye-button">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+      </div>
+      <p class="setting-description">
+        The educational content filter uses Groq AI to analyze website content.
+        You can get a Groq API key from <a href="https://console.groq.com" target="_blank">console.groq.com</a>.
+      </p>
+    </div>
+
+    <div class="info-panel">
+      <h2>About Pomodoro Technique</h2>
+      <p>The Pomodoro Technique is a time management method developed by Francesco Cirillo in the late 1980s. It uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short breaks.</p>
+      <div class="steps">
+        <div class="step">
+          <i class="fas fa-clipboard-list"></i>
+          <p>1. Choose a task to work on</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-hourglass-start"></i>
+          <p>2. Set the timer for a work session (default: 25 minutes)</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-laptop-code"></i>
+          <p>3. Work on the task until the timer rings</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-coffee"></i>
+          <p>4. Take a short break (default: 5 minutes)</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-sync-alt"></i>
+          <p>5. Repeat the cycle</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions-panel">
+      <button id="save-settings" class="btn primary">
+        <i class="fas fa-save"></i> Save Settings
+      </button>
+      <button id="back-to-popup" class="btn secondary">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+    </div>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>

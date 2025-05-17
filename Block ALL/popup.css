@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  width: 320px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  padding: 16px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.status-panel {
+  background-color: #ecf0f1;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.status-text {
+  margin-right: 4px;
+}
+
+.active {
+  color: #27ae60;
+}
+
+.inactive {
+  color: #e74c3c;
+}
+
+.allowed-domain {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #34495e;
+  word-break: break-all;
+}
+
+.hidden {
+  display: none;
+}
+
+.timer-panel {
+  background-color: #2c3e50;
+  color: white;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.timer-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+#timer-text {
+  font-size: 32px;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.timer-state {
+  margin-top: 4px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background-color: #3498db;
+  transition: width 1s linear;
+}
+
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn i {
+  margin-right: 8px;
+}
+
+.primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.primary:hover {
+  background-color: #2980b9;
+}
+
+.secondary {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.secondary:hover {
+  background-color: #27ae60;
+}
+
+.danger {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.danger:hover {
+  background-color: #c0392b;
+}
+
+.educational-filter-panel {
+  background-color: #f4f6f9;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.edu-status {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.edu-status i {
+  color: #3498db;
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.edu-status span {
+  font-size: 14px;
+  color: #34495e;
+}
+
+.edu-filter-status {
+  font-weight: 600;
+}
+
+.edu-description {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+#edu-filter-status.active {
+  color: #27ae60;
+}
+
+#edu-filter-status.inactive {
+  color: #e74c3c;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings {
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+.settings:hover {
+  background-color: #bdc3c7;
+  color: #34495e;
+}
+
+.info-text {
+  font-size: 12px;
+  color: #7f8c8d;
+  text-align: right;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlockAll - Educational Content</title>
+  <link rel="stylesheet" href="frame.css">
+</head>
+<body>
+  <div id="educational-warning" class="warning-container">
+    <div class="warning-content">
+      <div class="warning-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+          <path fill="#e74c3c" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+      </div>
+      <h1>Non-Educational Content Detected</h1>
+      <p>The content you're trying to access has been identified as non-educational.</p>
+      <p class="details">Our AI has determined that this content may not be suitable during focus time.</p>
+      <div class="action-buttons">
+        <button id="close-frame">Close</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="loading-indicator" class="loading-container">
+    <div class="spinner"></div>
+    <p>Analyzing content...</p>
+  </div>
+  
+  <iframe id="content-frame" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" allow="autoplay; camera; microphone; fullscreen"></iframe>
+  
+  <script src="frame.js"></script>
+</body>
+</html>

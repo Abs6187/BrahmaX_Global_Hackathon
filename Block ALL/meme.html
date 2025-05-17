@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Break Time - Fun Meme</title>
+  <link rel="stylesheet" href="meme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Time for a Break! <i class="fas fa-mug-hot"></i></h1>
+      <p class="subtitle">Enjoy a funny meme while you relax</p>
+    </header>
+
+    <div class="timer-display">
+      <p>Break ends in:</p>
+      <div class="timer" id="break-timer">00:00</div>
+    </div>
+
+    <div class="meme-container">
+      <div class="meme-wrapper" id="meme-wrapper">
+        <div class="loading" id="loading">
+          <i class="fas fa-spinner fa-spin"></i>
+          <p>Loading a funny meme...</p>
+        </div>
+        <div class="meme" id="meme-display">
+          <h3 id="meme-title"></h3>
+          <div class="meme-img-container">
+            <img id="meme-img" src="" alt="Funny meme">
+          </div>
+        </div>
+        <div class="error hidden" id="error-display">
+          <i class="fas fa-exclamation-circle"></i>
+          <p>Couldn't load a meme. Please check your internet connection.</p>
+        </div>
+      </div>
+      <button id="refresh-meme" class="btn">
+        <i class="fas fa-sync-alt"></i> Show Another Meme
+      </button>
+    </div>
+
+    <div class="relaxation-tips">
+      <h2>Quick Relaxation Tips</h2>
+      <ul>
+        <li><i class="fas fa-walking"></i> Stand up and stretch</li>
+        <li><i class="fas fa-eye"></i> Look away from your screen (20-20-20 rule)</li>
+        <li><i class="fas fa-glass-water"></i> Drink some water</li>
+        <li><i class="fas fa-wind"></i> Take deep breaths</li>
+        <li><i class="fas fa-person-walking"></i> Take a short walk if possible</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="meme.js"></script>
+</body>
+</html>
