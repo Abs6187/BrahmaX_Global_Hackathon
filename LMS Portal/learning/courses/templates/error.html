@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block banner %}
+<h1 class="text-white">
+    Error
+</h1>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">Error</h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-danger">
+                        {{ message }}
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="{% url 'courses:allcourse' %}" class="btn btn-primary">Back to Courses</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

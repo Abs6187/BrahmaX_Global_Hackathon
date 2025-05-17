@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block banner %}
+<h1 class="text-white">
+    {{ course.name }}
+</h1>
+<p class="mx-auto text-white mt-20 mb-40">
+    By {{ course.author.username }}
+</p>
+{% endblock %}
+
+{% block content %}
+{% if message %}
+<div class="container mt-3">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</div>
+{% endif %}
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Course Info -->
+        <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">Course Information</h4>
+                    <div class="course-image mb-4">
+                        <img class="img-fluid rounded" src="{{ course.img.url }}" alt="{{ course.name }}">
+                    </div>
+                    <h5>Subject</h5>
+                    <p>{{ course.subject }}</p>
+                    <h5>Description</h5>
+                    <p>{{ course.desc }}</p>
+                </div>
+            </div>
+
+            <!-- Course Materials -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">Course Materials</h4>
+                    {% if material %}
+                    <div class="list-group">
+                        {% for mat in material %}
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">{{ mat.desc }}</h6>
+                                    <small class="text-muted">Added on {{ mat.date }}</small>
+                                </div>
+                                <a href="{{ mat.file.url }}" class="btn btn-primary btn-sm" target="_blank">
+                                    <i class="fa fa-download"></i> Download
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="text-muted">No course materials available yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Assignments -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">Assignments</h4>
+                    {% if assign %}
+                    <div class="list-group">
+                        {% for assignment in assign %}
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">{{ assignment.title }}</h6>
+                                    <p class="mb-1">{{ assignment.desc }}</p>
+                                    <small class="text-muted">Due: {{ assignment.created_on|date:"F d, Y" }}</small>
+                                </div>
+                                <div>
+                                    {% if assignment.id in submitted_assignments %}
+                                    <span class="badge badge-success mr-2">Submitted</span>
+                                    {% endif %}
+                                    <a href="{% url 'courses:assignment' assignment.id %}" class="btn btn-primary btn-sm">
+                                        {% if assignment.id in submitted_assignments %}
+                                        View Submission
+                                        {% else %}
+                                        Submit Assignment
+                                        {% endif %}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="text-muted">No assignments available yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Quizzes -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">Quizzes and Tests</h4>
+                    {% if tests %}
+                    <div class="list-group">
+                        {% for test in tests %}
+                        <div class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">{{ test.title }}</h6>
+                                    <p class="mb-1">{{ test.desc }}</p>
+                                </div>
+                                <a href="{% url 'quizzes:takequiz' test.id %}" class="btn btn-primary btn-sm">
+                                    Start Quiz
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p class="text-muted">No quizzes available yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">Course Progress</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <strong>Materials:</strong> {{ material|length }} available
+                        </li>
+                        <li class="mb-2">
+                            <strong>Assignments:</strong> {{ assign|length }} total
+                        </li>
+                        <li class="mb-2">
+                            <strong>Quizzes:</strong> {{ tests|length }} available
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

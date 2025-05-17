@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block banner %}
+<h1 class="text-white">
+    Assignment: {{ assign.title }}
+</h1>
+<p class="mx-auto text-white mt-20 mb-40">
+    Due: {{ assign.created_on|date:"F d, Y" }}
+</p>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Assignment Details -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title">Assignment Details</h4>
+                    <p class="card-text">{{ assign.desc }}</p>
+                    {% if assign.task %}
+                    <div class="mt-3">
+                        <h5>Assignment File</h5>
+                        <a href="{{ assign.task.url }}" class="btn btn-primary" target="_blank">
+                            <i class="fa fa-download"></i> Download Assignment
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Submission Form -->
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Submit Your Work</h4>
+                    <form action="{% url 'courses:submit' assign.id %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="work">Upload Your Work</label>
+                            <input type="file" class="form-control-file" id="work" name="work" required>
+                            <small class="form-text text-muted">
+                                Upload your completed assignment file here. Supported formats: PDF, DOC, DOCX
+                            </small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Submit Assignment
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Submission Guidelines</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fa fa-check text-success"></i>
+                            Read the assignment carefully
+                        </li>
+                        <li class="mb-2">
+                            <i class="fa fa-check text-success"></i>
+                            Complete all required tasks
+                        </li>
+                        <li class="mb-2">
+                            <i class="fa fa-check text-success"></i>
+                            Submit before the deadline
+                        </li>
+                        <li class="mb-2">
+                            <i class="fa fa-check text-success"></i>
+                            Make sure your submission is in the correct format
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
