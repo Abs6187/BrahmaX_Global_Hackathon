@@ -1,0 +1,176 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+  <!-- Mobile Specific Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{% static 'img/fav.png' %}" />
+  <!-- Author Meta -->
+  <meta name="author" content="Agents of Apocalypse" />
+  <!-- Meta Description -->
+  <meta name="description" content="" />
+  <!-- Meta Keyword -->
+  <meta name="keywords" content="" />
+  <!-- meta character set -->
+  <meta charset="UTF-8" />
+  <!-- Site Title -->
+  <title>LEARNING LEGION</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900|Roboto:400,400i,500,700" rel="stylesheet" />
+  <!--
+      CSS
+      =============================================
+    -->
+
+
+    {% block css %}
+    {% endblock %}
+  <link rel="stylesheet" href="{% static 'css/linearicons.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/hexagons.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css" />
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body style="font-family: Roboto Mono Light">
+  <!-- ================ Start Header Area ================= -->
+  
+  <header class="default-header">
+    <nav class="navbar navbar-expand-lg  navbar-light" style="background-color:black">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/fav.png" alt="" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="lnr lnr-menu"> LEARNING LEGION </span>
+        </button>
+
+        {% if user.is_authenticated %}
+            <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="{% url 'accounts:dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'courses:allcourse' %}">Courses</a></li>
+                <li><a href="{% url 'discussions:discussionHome' %}">Discussion Forum</a></li>
+                <li><a href="{% url 'leaderboard:leader-home' %}">Leaderboard</a></li>
+                <li><a href="{% url 'about' %}">About US</a></li>
+                <li><a href="{% url 'contactus' %}">Contact US</a></li>
+                <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+              </ul>
+            </div>
+        {% else %}
+            <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'accounts:register' %}">Register</a></li>
+                <li><a href="{% url 'accounts:login' %}">Log IN</a></li>
+                <li><a href="{% url 'about' %}">About US</a></li>
+                <li><a href="{% url 'contactus' %}">Contact US</a></li>
+              </ul>
+            </div>
+        {% endif %}
+      </div>
+    </nav>
+  </header>
+
+    
+  <!-- ================ End Header Area ================= -->
+<!-- ================ start banner Area ================= -->
+  <section class="home-banner-area" >
+    <div class="container" >
+      <div class="row justify-content-center  align-items-center">
+        <div class="col-lg-5 col-md-8 home-banner-left">
+          {% block banner %}
+            {% endblock %}
+        </div>
+        <div class="offset-lg-2 col-lg-5 col-md-12 home-banner-right">
+          <img class="img-fluid" src="{% static 'img/header-img.png' %}" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ================ End banner Area ================= -->
+
+  {% block content %}
+{% endblock %}
+
+  <!-- ================ start footer Area ================= -->
+  <footer class="footer-area section-gap">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-3 col-md-offset-1 single-footer-widget">
+                <h4>Top Courses</h4>
+                <ul>
+                    <li><a href="{% url 'courses:allcourse' %}">Data Structures and Algorithms C++</a></li>
+                    <li><a href="{% url 'courses:allcourse' %}">Competitive Programming BootCamp</a></li>
+                    <li><a href="{% url 'courses:allcourse' %}">Data Science</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-3 single-footer-widget">
+                <h4>Features</h4>
+                <ul>
+                  <li>Discussion Forum</li>
+                  <li>One to One Mentorship</li>
+                  <li>Weekly Test and Quizzes</li>
+                </ul>
+              </div>
+              <div class="col-md-3 single-footer-widget">
+                <h4>External Resources</h4>
+                <ul>
+                  <li><a href="https://www.wolframalpha.com/">Wolfram Alpha</a></li>
+                  <li><a href="https://www.towardsdatascience.com/">Towards Data Science</a></li>
+                  <li><a href="https://www.quora.com/">Quora</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 single-footer-widget">
+                <h4>Address</h4>
+                <a href="mailto:adaptive.learning.innodev@gmail.com">Adaptive Learning</a>
+                <br>
+                <p>
+                     Shri Ram Institute Of Technology, Jabalpur, 482002
+                </p>
+                
+              </div>
+          </div>
+          <br>
+          <br>
+          <div class="row justify-content-center align-items-center text-large p-0">
+              <big>Made With &nbsp;<span style="color: #e25555;">&#9829;</span> &nbsp; at SRIT Jabalpur</big>
+          </div>
+          <br>
+          <div class="row justify-content-center align-items-center text-large p-0">
+              <big>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</big>
+            </div>
+      </div>
+	</footer>
+  <!-- ================ End footer Area ================= -->
+
+  <script src="{% static 'js/vendor/jquery-2.2.4.min.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/parallax.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.sticky.js' %}"></script>
+  <script src="{% static 'js/hexagons.min.js' %}"></script>
+  <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+  <script src="{% static 'js/waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
