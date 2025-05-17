@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Assistant</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      width: 400px;
+      height: 600px;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>AI Assistant</h1>
+      <p class="subtitle">Your personal learning companion</p>
+    </header>
+    <main class="main-content">
+      <div class="input-group">
+        <textarea 
+          id="question" 
+          placeholder="What would you like to learn about?"
+          rows="4"
+        ></textarea>
+        <button id="askBtn">
+          <span class="button-text">Ask AI</span>
+        </button>
+      </div>
+      <div id="response" class="response-area"></div>
+    </main>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
