@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 app = Flask(__name__)
 
 # Initialize Gemini with API key
-genai.configure(api_key="AIzaSyCBs4TumAonKI0AodIzbl4b8Vmu9eM_r9I")
+genai.configure(api_key="ENTER_YOUR_API_KEY")
 
 # Configure the model
 generation_config = {
