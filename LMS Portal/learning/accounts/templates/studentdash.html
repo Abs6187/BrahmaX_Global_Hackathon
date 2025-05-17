@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block banner %}
+<h1 class="text-white">
+            Welcome back {{ request.user.username }}
+          </h1>
+          <p class="mx-auto text-white  mt-20 mb-40">
+
+          </p>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 img">
+        <br><br>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvzOpl3-kqfNbPcA_u_qEZcSuvu5Je4Ce_FkTMMjxhB-J1wWin-Q"  alt="" class="img-rounded" style="border:rounded">
+    </div>
+    <div class="col-md-6 details">
+        <br><br>
+      <blockquote>
+        <h3>{{ det.fullname }}</h3>
+          <br>
+        <small><cite title="Source Title">{{ det.bio }}<i class="icon-map-marker"></i></cite></small>
+      </blockquote>
+      <p>
+        {{ det.mob }} <br>
+        {{ det.email }} <br>
+        {{ det.city }}
+      </p>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<div class="container">
+    <div class="row">
+    <div class="col-md-8">
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="span3">
+                        <div class="sidebar">
+
+                            <div class="module">
+                                <div class="module-head">
+                                    <h3>
+                                        Course You are enrolled</h3>
+                                </div>
+                                <br><br>
+                                <div class="module-body table">
+                                    <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display"
+                                        width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Name
+                                                </th>
+                                                <th>
+                                                    Date Enrolled
+                                                </th>
+
+                                                <th>
+                                                    Subject
+                                                </th>
+                                                <th>
+                                                    Go to course
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for cour in course %}
+                                            <tr class="odd gradeX">
+                                                <td>
+                                                    {{ cour.course.name }}
+                                                </td>
+                                                <td>
+                                                    {{ cour.date }}
+                                                </td>
+
+                                                <td class="center">
+                                                   {{ cour.course.subject }}
+                                                </td>
+                                                <td class="center">
+                                                     <a class="btn text-uppercase" href="{% url 'courses:detail' cour.course.id %}">View</a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                            <!--/.module-->
+                        </div>
+                        <!--/.content-->
+                    </div>
+                    <!--/.span9-->
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+    </div>
+    <div class="col-md-4">
+<div class="container">
+<a href="{% url 'quizzes:assignstu' %}" class="btn btn-block btn-outline btn-primary">See assignment</a><br><br>
+<a href="{% url 'accounts:quizstu' %}" class="btn btn-block btn-outline btn-success">See quizzes</a><br><br>
+<a href="{% url 'accounts:stcontact' %}" class="btn btn-block btn-outline btn-danger">See Remarks</a><br><br>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
