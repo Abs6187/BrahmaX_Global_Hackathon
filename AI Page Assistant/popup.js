@@ -12,7 +12,7 @@ document.getElementById("askBtn").addEventListener("click", async () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer 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"
+        "Authorization": "Bearer ENTER_YOUR_API_KEY"
       },
       body: JSON.stringify({
         model: "mixtral-8x7b-32768",
