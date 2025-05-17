@@ -1,0 +1,263 @@
+html {
+    width: 400px;
+    height: 550px;
+}
+
+body {
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #2c3e50;
+    margin: 0;
+    width: 400px;
+    min-height: 500px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+#pageTitle {
+    animation: slideDown 0.7s ease-out forwards;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.header-subtitle {
+    animation: slideDown 0.7s ease-out forwards;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    animation: slideUp 0.7s ease-out forwards;
+    transition: all 0.3s ease;
+}
+
+#questionInput {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e8ecef;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+#questionInput:focus {
+    outline: none;
+    border-color: #7f8c8d;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.input-hint {
+    text-align: center;
+    color: #95a5a6;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+#messageContainer {
+    overflow-y: auto;
+    animation: fadeIn 0.7s ease-in-out forwards;
+    height: 350px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    margin-bottom: 70px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.userMessage {
+    animation: slideLeft 0.5s ease-out forwards;
+    max-width: 85%;
+    display: inline-block;
+    float: right;
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    background-color: #3498db;
+    border-radius: 12px 12px 0 12px;
+    color: white;
+    font-size: 14px;
+    word-wrap: break-word;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modelMessage {
+    animation: slideRight 0.5s ease-out forwards;
+    max-width: 85%;
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    background-color: #f8f9fa;
+    border-radius: 12px 12px 12px 0;
+    color: #2c3e50;
+    font-size: 14px;
+    word-wrap: break-word;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modelMessage:hover, .userMessage:hover {
+    transform: translateY(-1px);
+    transition: transform 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-left {
+    flex: 1;
+}
+
+.header-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.control-btn .material-icons {
+    font-size: 20px;
+}
+
+#pinBtn.active {
+    color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+/* Minimized state */
+body.minimized #messageContainer,
+body.minimized .input-container {
+    display: none;
+}
+
+body.minimized {
+    height: auto;
+    min-height: 0;
+}
+
+body.minimized .popup-header {
+    border-bottom: none;
+}
+
+/* Transition animations */
+#messageContainer,
+.input-container {
+    transition: all 0.3s ease;
+}
+
+/* Update body styles */
+body {
+    width: 400px;
+    min-height: 500px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}

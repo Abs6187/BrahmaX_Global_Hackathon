@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.5.1.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <script src="script.js"></script>
+    <div class="popup-header">
+        <div class="header-left">
+            <div id="pageTitle">Learning Legion</div>
+            <div class="header-subtitle">Your AI-Powered Learning Companion</div>
+        </div>
+        <div class="header-controls">
+            <button id="minimizeBtn" class="control-btn" title="Minimize">
+                <span class="material-icons">remove</span>
+            </button>
+            <button id="pinBtn" class="control-btn" title="Keep open">
+                <span class="material-icons">push_pin</span>
+            </button>
+            <button id="closeBtn" class="control-btn" title="Close">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+    </div>
+    <div id="messageContainer">
+        <div class="modelMessage">Hello! I'm your Learning Legion assistant, ready to help you learn and understand content across the web. Type "help" to learn more about what I can do!</div>
+        <br>
+    </div>
+    <div class="input-container">
+        <input type="text" id="questionInput" placeholder="Ask me anything about the article...">
+        <div class="input-hint">Press Enter to send</div>
+    </div>
+</body>
+</html>
+
